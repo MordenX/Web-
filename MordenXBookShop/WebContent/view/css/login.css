@@ -1,0 +1,139 @@
+@charset "utf-8";
+html, body{
+	height:100%;
+}
+body, html, div, ul, li, p, span, table, td, tr, th, a, img {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Microsoft Yahei", SimHei, "宋体";
+    font-size: 14px;
+    border: 0px;
+    border: none;
+}
+ul, li {
+    list-style-type: none
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+span {
+    display: inline-block;
+}
+img {
+    border: none;
+    vertical-align: top;
+}
+.div-floatl{
+    float: left;
+}
+.div-floatr{
+    float: right;
+}
+
+.clearfloat:after {
+    display: block;
+    clear: both;
+    content: ".";
+    visibility: hidden;
+    height: 0
+}
+.clearfloat {
+    zoom: 1
+}
+/*以上为基本样式*/
+.need-height{
+	height:100%;
+}
+.login-left{
+	width:50%;
+}
+.login-right{
+	height:100%;
+	width:50%;
+}
+.left-img{
+	overflow: hidden;
+}
+.left-img img{
+    position: absolute;
+	height: 100%;
+	width:50%;
+}
+.left-img .img-show{
+      z-index: 99;
+}
+.left-img .img-hidden{
+	z-index: 1;
+}
+.login-title{
+	margin-left:50px;
+    margin-top:35%;
+}
+.login-title p{
+	font-size: 30px;
+    font-weight: 300;
+    color: #4e5a64;
+}
+.login-title span{
+	margin-top:10px;
+	font-size: 16px;
+	color: #888;
+}
+.login-user{
+	margin-left:50px;
+    margin-top:8%;
+}
+.login-user input{
+	width: 40%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid;
+    border-color: #a0a9b4;
+    color: #868e97;
+    font-size: 14px;
+    margin-bottom: 30px;
+    margin-right:5%;
+    outline:none;
+}
+.error-tips{
+	color:#d22;
+	margin-left:50px;
+}
+.login-active{
+	margin-left:50px;
+	color：#aaa;
+}
+.login-active span{
+	color:#bbb;
+}
+.login-active a{
+	color:#bbb;
+}
+.login-active .forgetpw{
+	margin-left:59%;
+}
+.login-active .login-true{
+	color: #FFF;
+    background-color: #32c5d2;
+    border-color: #32c5d2;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+.forgetpw:hover{
+	color: #d22;
+	text-decoration: underline;
+}
+.login-true:hover{
+	background-color:#32a5c2;
+}
+
