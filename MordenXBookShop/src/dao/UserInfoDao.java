@@ -27,7 +27,7 @@ public class UserInfoDao {
 	
 	public List<UserInfoModel> findByUserName(Object...objs) throws Exception{
 		try {
-			String sql ="select * from user where username=?";
+			String sql ="select * from userinfo where username=?";
 			list = dbhelper.executeQuery(sql, new UserInfoMapper(), objs);
 		} catch (Exception e) {
 			throw e;
@@ -40,7 +40,7 @@ public class UserInfoDao {
 	
 	public List<UserInfoModel> findAll(Object...objs) throws Exception{
 		try {
-			String sql ="select * from user";
+			String sql ="select * from userinfo";
 			list = dbhelper.executeQuery(sql, new UserInfoMapper(), objs);
 		} catch (Exception e) {
 			throw e;

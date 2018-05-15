@@ -1,0 +1,472 @@
+.banner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 50;
+}
+.banner #particles-js {
+  height: 74.5%;
+  min-width: 1200px;
+  position: relative;
+}
+.banner #particles-js .game_num {
+  position: absolute;
+  width: 1100px;
+  height: 218px;
+  left: 50%;
+  top: 50%;
+  margin-left: -550px;
+  margin-top: -109px;
+}
+
+.banner #particles-js .game_num .game_tet p {
+  width: 100%;
+  height: 178px;
+  line-height: 108px;
+  font-size: 34px;
+  color: #FFFFFF;
+  text-align: center;
+}
+.banner #particles-js .game_num .game_tet p .game_span01, .banner #particles-js .game_num .game_tet p .game_span02 {
+  display: inline-block;
+  width: 48px;
+  height: 64px;
+  line-height: 64px;
+  font-size: 54px;
+  font-weight: 600;
+  color: #000000;
+  background: #FFFFFF;
+}
+.banner #particles-js .game_num .game_tet .down_input {
+  height: 88px;
+  padding-top: 22px;
+  text-align: center;
+}
+.banner #particles-js .game_num .game_tet .down_input .input_bg {
+  display: inline-block;
+  width: 260px;
+  height: 64px;
+  border-radius: 48px;
+}
+.banner #particles-js .game_num .game_tet .down_input .input_bg input {
+  width: 258px;
+  height: 62px;
+  margin: 0 auto;
+  border: none;
+  outline: none;
+  color: #FFFFFF;
+  font-size: 18px;
+  border-radius: 48px;
+  background: #FF9C00;
+  cursor: pointer;
+}
+.banner #particles-js .qcorder {
+  position: absolute;
+  width: 110px;
+  height: 143px;
+  right: 85px;
+  bottom: 23px;
+}
+.banner #particles-js .qcorder img {
+  display: block;
+  width: 110px;
+  height: 110px;
+}
+.banner #particles-js .qcorder p {
+  height: 32px;
+  line-height: 32px;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-align: center;
+}
+.banner #particles-js .ad-activity {
+  position: absolute;
+  width: 305px;
+  height: 245px;
+  left: 90px;
+  bottom: 78px;
+}
+.banner #particles-js .ad-activity .could-left-wrap {
+  position: absolute;
+  width: 258px;
+  height: 256px;
+  left: 50%;
+  top: 50%;
+  margin-left: -129px;
+  margin-top: -128px;
+  z-index: 200;
+}
+
+
+@keyframes earth {
+  0% {
+    top: 0;
+  }
+  2% {
+    top: -20px;
+  }
+  4% {
+    top: 0;
+  }
+  6% {
+    top: -15px;
+  }
+  8% {
+    top: 0;
+  }
+  10% {
+    top: -10px;
+  }
+  12% {
+    top: 0;
+  }
+  14% {
+    top: -5px;
+  }
+  16% {
+    top: 0;
+  }
+  18% {
+    top: -3px;
+  }
+  20% {
+    top: 0;
+  }
+  100% {
+    top: 0;
+  }
+}
+/*=====Safari & Chrome======*/
+@-webkit-keyframes earth {
+  0% {
+    top: 0;
+  }
+  2% {
+    top: -20px;
+  }
+  4% {
+    top: 0;
+  }
+  6% {
+    top: -15px;
+  }
+  8% {
+    top: 0;
+  }
+  10% {
+    top: -10px;
+  }
+  12% {
+    top: 0;
+  }
+  14% {
+    top: -5px;
+  }
+  16% {
+    top: 0;
+  }
+  18% {
+    top: -3px;
+  }
+  20% {
+    top: 0;
+  }
+  100% {
+    top: 0;
+  }
+}
+/*=====firefox========*/
+@-moz-keyframes earth {
+  0% {
+    top: 0;
+  }
+  2% {
+    top: -20px;
+  }
+  4% {
+    top: 0;
+  }
+  6% {
+    top: -15px;
+  }
+  8% {
+    top: 0;
+  }
+  10% {
+    top: -10px;
+  }
+  12% {
+    top: 0;
+  }
+  14% {
+    top: -5px;
+  }
+  16% {
+    top: 0;
+  }
+  18% {
+    top: -3px;
+  }
+  20% {
+    top: 0;
+  }
+  100% {
+    top: 0;
+  }
+}
+@-o-keyframes earth {
+  0% {
+    top: 0;
+  }
+  2% {
+    top: -20px;
+  }
+  4% {
+    top: 0;
+  }
+  6% {
+    top: -15px;
+  }
+  8% {
+    top: 0;
+  }
+  10% {
+    top: -10px;
+  }
+  12% {
+    top: 0;
+  }
+  14% {
+    top: -5px;
+  }
+  16% {
+    top: 0;
+  }
+  18% {
+    top: -3px;
+  }
+  20% {
+    top: 0;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes could-right {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes could-right {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes could-right {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes could-right {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes could-left {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes could-left {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes could-left {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes could-left {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.ban_bot {
+  position: relative;
+  width: 1200px;
+  height: 25.5%;
+  margin: 0 auto;
+}
+.ban_bot .ban_bot_con {
+  height: 100%;
+}
+.ban_bot .ban_bot_con .ban_con_ul {
+  width: 1200px;
+  height: 100%;
+  background: #FFFFFF;
+}
+.ban_bot .ban_bot_con .ban_con_ul li {
+  -webkit-transition: all 500ms;
+  -moz-transition: all 500ms;
+  -ms-transition: all 500ms;
+  -o-transition: all 500ms;
+  transition: all 500ms;
+}
+.ban_bot .ban_bot_con .ban_con_ul li:hover {
+  -webkit-box-shadow: 0 0 10px  #ccc;
+  -moz-box-shadow: 0 0 10px  #ccc;
+  box-shadow: 0 0 10px  #ccc;
+}
+.ban_bot .ban_bot_con .ban_con_ul li .tet {
+  border: none;
+}
+.ban_bot .ban_bot_con .ban_con_ul .ban_con_li01 {
+  width: 400px;
+  height: 50%;
+  float: left;
+  position: relative;
+}
+.ban_bot .ban_bot_con .ban_con_ul .ban_con_li01 a {
+  display: block;
+  float: left;
+  width: 262px;
+  height: 100%;
+  padding: 0 0 0 116px;
+  background: url(../img/dz_tit.png) no-repeat 50px center;
+}
+.ban_bot .ban_bot_con .ban_con_ul .ban_con_li01 a .tet {
+  position: absolute;
+  left: 116px;
+  top: 50%;
+  width: 265px;
+  height: 53px;
+  margin-top: -31px;
+  margin-left: 8px;
+  padding-top: 10px;
+  padding-right: 10px;
+  border-right: 1px solid #E5E5E5;
+}
+.ban_bot .ban_bot_con .ban_con_ul .ban_con_li01 .tet {
+  width: 258px;
+  height: 52px;
+  background: url(../img/st_bg.png) no-repeat right top;
+}
+.ban_bot .ban_bot_con .ban_con_ul .ban_con_li02 a {
+  background: url(../img/zw_tit.png) no-repeat 50px center;
+}
+.ban_bot .ban_bot_con .ban_con_ul .ban_con_li03 a {
+  background: url(../img/sd_tit.png) no-repeat 50px center;
+}
+.ban_bot .ban_bot_con .ban_con_ul .ban_con_li04 a {
+  background: url(../img/zq_tit.png) no-repeat 50px center;
+}
+.ban_bot .ban_bot_con .ban_con_ul .ban_con_li05 a {
+  background: url(../img/ct_tit.png) no-repeat 50px center;
+}
+.ban_bot .ban_bot_con .ban_con_ul .ban_con_li06 a {
+  background: url(../img/bj_tit.png) no-repeat 50px center;
+}
+.ban_bot .ban_bot_con .ban_con_ul .ban_con_li03 .tet {
+  border: none !important;
+}
+.ban_bot .ban_bot_con .ban_con_ul .ban_con_li06 .tet {
+  border: none !important;
+}
+.ban_bot .ban_bot_con .ban_con_ul .tet .tet_p01 {
+  height: 28px;
+  line-height: 28px;
+  font-size: 22px;
+  margin-bottom: 5px;
+  color: #000000;
+}
+.ban_bot .ban_bot_con .ban_con_ul .tet .tet_p02 {
+  font-size: 14px;
+  color: #999999;
+}
+.ban_bot .down_enter {
+  width: 50px;
+  height: 46px;
+  position: absolute;
+  top: -46px;
+  left: 50%;
+  margin-left: -25px;
+  cursor: pointer;
+  background: url(../images/down_img.png) no-repeat center center;
+  -webkit-animation: down .5s linear infinite alternate;
+  animation: down .5s linear infinite alternate;
+}
+

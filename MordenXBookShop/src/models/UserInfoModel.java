@@ -9,6 +9,7 @@ public class UserInfoModel implements Serializable {
 	private int id;
 	private String username;
 	private String userpass;
+	private String useremail;
 	private int age;
 	private String gender;
 	private String hobby;
@@ -81,6 +82,12 @@ public class UserInfoModel implements Serializable {
 	}
 	public void setImgurl(String imgurl) {
 		this.imgurl = imgurl;
+	}
+	public String getUseremail() {
+		return useremail;
+	}
+	public void setUseremail(String useremail) {
+		this.useremail = useremail;
 	}
 	
 }

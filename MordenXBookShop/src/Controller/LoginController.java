@@ -39,7 +39,7 @@ public class LoginController extends HttpServlet {
 			return ;
 		}else {
 			req.setAttribute("message", "用户名与密码不匹配");
-			req.getRequestDispatcher("Login.jsp").forward(req, resp);
+			req.getRequestDispatcher("login.jsp").forward(req, resp);
 			return ;
 		}
 		

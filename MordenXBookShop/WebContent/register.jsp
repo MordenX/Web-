@@ -1,88 +1,65 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>登录页面</title>
+		<meta charset="utf-8">
+		<title>注册界面</title>
 		<link rel="stylesheet" href="view/css/reset.css" />
 		<link rel="stylesheet" href="view/css/common.css" />
 		<link rel="stylesheet" href="view/css/font-awesome.min.css" />
-<meta name="description" content="Change OR Die" />
-
-</head>
-
-<body>
-
+		<meta name="description" content="Change OR Die" />
+	</head>
+	<body>
 <style type="text/css" >
-span{
-text-align:center;
-margin:0;padding:0;
-width: 300px;
-height:13px;
-}
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体"; }
 .logo{
 	width: 500px;
 	height: 150px;
 	margin: 0px auto;
 	background-image:  url(../img/logowz.png)   no-repeat center;
 } 
-*{margin:0;padding:0;list-style-type:none;}
-a,img{border:0;}
-body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体"; }
-
-.error {
-	font-size: 13px;
-	color: red;
-	width: 300px;
-	margin: 0 auto;
-	display: none;
-}
 </style>
 
 
- <canvas id="sakura"style="position:absolute;z-index:-1";> </canvas>
-  
-  <div class="wrap login_wrap">
-		
+<canvas id="sakura"style="position:absolute;z-index:-1";> </canvas>
+		<div class="wrap login_wrap">
 			<div class="content">
-			
-				<div class="logo"></div>
 				
+				<div class="logo">
+				
+				
+				</div>
 				<div class="login_box">	
-					
 					<div class="login_form">
 						<div class="login_title">
-							登录
+							注册
 						</div>
-						<form action="LoginController"  onsubmit="return checkForm()" method="post" >
-							<!-- 设置焦点 -->
-							 <label for="username">
+						<form action="RegisterController" method="post" onsumbit="  return checkForm()" id="sum">
+							
 							<div class="form_text_ipt">
-								<!-- 实时监控 -->
-								<input name="username" id="username" type="text" placeholder="用户名" onBlur="checkUserName(this)" oninput="checkUserName(this)">
+								<input name="useremail"  id="userEmail" type="text" placeholder="邮箱" onBlur="checkEmail()" oninput="checkEmail()" required>
 							</div>
-							<div class="ececk_warning"  id="nameErr" ></div>
-							</label>
-							<label for="pasword">
+							<div class="ececk_warning"  id="emailErr"></div>
 							<div class="form_text_ipt">
-								<input name="password" id="userPasword" type="password" placeholder="密码"  onBlur="checkUserPasword(this)" oninput="checkUserPasword(this)">
+								<input name="username"   id="username"  type="text" placeholder="用户名" onBlur="checkUserName()" oninput="checkUserName()">
 							</div>
-							<div class="ececk_warning" id="paswordErr" ></div>
-							</label>
-							<div class="form_check_ipt">
-								<div class="left check_left">
-									<label><input name="" type="checkbox"> 下次自动登录</label>
-								</div>
-								<div class="right check_right">
-									<a href="#">忘记密码</a>
-								</div>
+							<div class="ececk_warning" id="nameErr"></div>
+							<div class="form_text_ipt">
+								<input name="password" type="password"  id="userPasword"  onBlur="checkPassword()" oninput="checkPassword()" placeholder="密码">
 							</div>
+							<div class="ececk_warning" id="passwordErr"></div>
+							<div class="form_text_ipt">
+								<input name="password" type="password"  id="userConfirmPasword"  placeholder="重复密码"  onBlur="ConfirmPassword()" oninput="ConfirmPassword()">
+							</div>
+							<div class="ececk_warning" id="conPasswordErr"></div>
 							<div class="form_btn">
-								<button type="onsumbit" onclick="return checkForm()">登录</button>
+								<button type="onsumbit" onclick="return checkForm()">注册</button>
 							</div>
 							<div class="form_reg_btn">
-								<span>还没有帐号？</span><a href="register.jsp">马上注册</a>
+								<span>已有帐号？</span><a href="login.jsp">马上登录</a>
 							</div>
 						</form>
 						<div class="other_login">
@@ -101,78 +78,138 @@ body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体"; }
 		</div>
 		<script type="text/javascript" src="view/js/jquery.min.js" ></script>
 		<script type="text/javascript" src="view/js/common.js" ></script>
-		<script  type="text/javascript" src="view/js/index.js"></script>
-
-
-<!-- 表单数据验证区域 -->
-
+		 <script  type="text/javascript" src="view/js/index.js"></script>
+		 
+<!-- 表单验证 -->
+		 
 <script type="text/javascript"> 
+ 
  function checkForm(){ 
-  if(checkUserName()==false || checkPassword()==false){
-		return false;	  
-  } 
+	if(checkUserName()==false || checkPassword()==false || ConfirmPassword()==false || checkEmail()==false){
+		return false;
+	}
   } 
  
  <!--验证是否为空-->
  
   //验证用户名   
   function checkUserName(){ 
-  var username = document.getElementById('username'); 
-  var errname = document.getElementById('nameErr'); 
-  var pattern = /^\w{5,}$/;  //用户名格式正则表达式：用户名要至少三位 
+  var username = document.getElementById('username')
+  var errname = document.getElementById('nameErr')
+  var pattern = /^\w{3,}$/;  //用户名格式正则表达式：用户名要至少三位 
   if(username.value.length == 0){ 
-	var info="<span style="+"color:red; font-weight:bold "+">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp用户名不能为空！！！</span>"
+	var info="<span style="+"color:red; font-weight:bold"+">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp用户名不能为空！！！</span>"
     errname.innerHTML=info
     errname.className="erro" 
     return false; 
     } 
   if(!pattern.test(username.value)){ 
-	  var info="<span style="+"color:red; font-weight:bold "+">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp用户名要至少五位！！！</span>"
+	  var info="<span style="+"color:red; font-weight:bold "+">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp用户名不合法！！！</span>"
 	   errname.innerHTML=info 
     errname.className="erro" 
     return false; 
     } 
    else{ 
-	   var info="<span style="+"color:green; font-weight:bold "+">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp用户名合法</span>"
-	    errname.innerHTML=info
+	 var info="<span style="+"color:green; font-weight:bold "+">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp用户名正确</span>"
+	 errname.innerHTML=info
      errname.className="success"; 
      return true; 
      } 
   } 
-  //验证密码 
-   function checkUserPasword(){ 
-  var username = document.getElementById('userPasword'); 
-  var errname = document.getElementById('paswordErr'); 
-  if(username.value.length == 0){ 
-	var info="<span style="+"color:red; font-weight:bold "+">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp密码不能为空！！！</span>"
-    errname.innerHTML=info
-    errname.className="erro" 
-    return false; 
-    }else{
-    	return true;
-    } 
-  } 
+		
   
-</script> 
+//邮箱验证
+  function checkEmail(){ 
+    var userEmail = document.getElementById('userEmail'); 
+    var emailErr = document.getElementById('emailErr'); 
+    var pattern =/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/
+    if(userEmail.value.length == 0){ 
+  		var info="<span style="+"color:red; font-weight:bold "+">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp邮箱名不能为空！！！</span>"
+  		emailErr.innerHTML=info
+  		emailErr.className="erro" 
+  	    return false; 
+  	    } 
+    
+    if(!pattern.test(userEmail.value)){ 
+  	  var info="<span style="+"color:red; font-weight:bold "+">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp邮箱名不合法！！！</span>"
+  	  emailErr.innerHTML=info 
+  	  emailErr.className="erro" 
+      return false; 
+      } 
+     else{ 
+  	   var info="<span style="+"color:green; font-weight:bold "+">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp邮箱名正确</span>"
+  	   emailErr.innerHTML=info
+  	   emailErr.className="success";
+       return true; 
+       } 
+    } 		
 
 
+  //密码验证  
+  function checkPassword(){ 
+	  var userpasswd = document.getElementById('userPasword'); 
+	  var errPasswd = document.getElementById('passwordErr'); 
+	  var pattern = /^\w{4,8}$/; //密码要在4-8位 
+	  
+	  if(userpasswd.value.length == 0){ 
+	  		var info="<span style="+"color:red; font-weight:bold "+">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp密码不能为空！！！</span>"
+	  		errPasswd.innerHTML=info
+	  		errPasswd.className="erro" 
+	  	    return false; 
+	  	    } 
+	  
+	  if(!pattern.test(userpasswd.value)){ 
+		  var info="<span style="+"color:red; font-weight:bold "+">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp密码要在4-8位！！！</span>"
+		  errPasswd.innerHTML=info 
+		  errPasswd.className="erro" 
+	    return false; 
+	    } 
+	   else{ 
+		   var info="<span style="+"color:green; font-weight:bold "+">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp密码合法</span>"
+		   errPasswd.innerHTML=info 
+		   errPasswd.className="success"; 
+	     return true; 
+	     } 
+	  } 
+ //确认密码 
+	  function ConfirmPassword(){ 
+	  var userpasswd = document.getElementById('userPasword'); 
+	  var userConPassword = document.getElementById('userConfirmPasword'); 
+	  var errConPasswd = document.getElementById('conPasswordErr'); 
+	  if((userpasswd.value)!=(userConPassword.value) || userConPassword.value.length == 0){ 
+		  var info="<span style="+"color:red; font-weight:bold "+">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp上下密码不一致！！！</span>"
+		  errConPasswd.innerHTML=info
+	    errConPasswd.className="error" 
+	    return false; 
+	    } 
+	   else{ 
+		   var info="<span style="+"color:green; font-weight:bold "+">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp密码合法</span>"
+	     errConPasswd.innerHTML=info
+	     errConPasswd.className="success"; 
+	     return true; 
+	     }    
+	  } 	  
+  		  
+  		  
+  		  
+  		  
+  		  
+  		 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--页面动态特效区域-->
-
+		 
+		 
+</script>		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
 <!-- sakura shader -->
 <script id="sakura_point_vsh" type="x-shader/x_vertex">
 uniform mat4 uProjection;
@@ -459,9 +496,6 @@ void main(void) {
     gl_FragColor.a = 1.0;
 }
 </script>
-
- 
-
-</body>
-
+		
+	</body>
 </html>
